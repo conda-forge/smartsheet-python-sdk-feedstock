@@ -1,18 +1,18 @@
 {% set name = "smartsheet-python-sdk" %}
-{% set version = "3.0.4" %}
+{% set version = "3.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smartsheet-python-sdk-{{ version }}.tar.gz
-  sha256: c38e3cc7a42564e06e265ac4bd169673e8ecc2405ac1dd32c4bdc3799e900462
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: d0ef0834b80838ef13493f0cf28374d11b72df278e870dc0f1a28a4567e763f1
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,6 +22,7 @@ requirements:
     - six >=1.9
     - setuptools
   run:
+    - setuptools_scm
     - python >={{ python_min }}
     - requests
     - requests-toolbelt
