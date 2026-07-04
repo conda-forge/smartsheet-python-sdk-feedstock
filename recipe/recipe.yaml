@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "4.1.0"
+
+package:
+  name: smartsheet-python-sdk
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/s/smartsheet-python-sdk/smartsheet_python_sdk-${{ version }}.tar.gz
+  sha256: 2b1d524ffe34897d3480726a8cf7f63290ef6139deb694ff2b302606c95ca0e9
+
+build:
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools-scm >=7.0,<8
+    - hatchling
+    - hatch-vcs
+    - six >=1.9
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - requests
+    - requests-toolbelt
+    - six >=1.9
+    - certifi
+    - python-dateutil
+
+tests:
+  - python:
+      imports:
+        - smartsheet
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  license: Apache-2.0
+  license_file:
+    - NOTICE
+    - LICENSE.md
+  summary: Library that uses Python to connect to Smartsheet services (using API 2.0).
+  homepage: http://smartsheet-platform.github.io/api-docs/
+  repository: https://github.com/smartsheet/smartsheet-python-sdk
+  documentation: http://smartsheet-platform.github.io/api-docs/
+
+extra:
+  recipe-maintainers:
+    - rxm7706
