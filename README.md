@@ -9,14 +9,19 @@ Package license: Apache-2.0
 
 Summary: Library that uses Python to connect to Smartsheet services (using API 2.0).
 
+Development: https://github.com/smartsheet/smartsheet-python-sdk
+
+Documentation: http://smartsheet-platform.github.io/api-docs/
+
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20388&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/smartsheet-python-sdk-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/smartsheet-python-sdk-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/smartsheet-python-sdk-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
