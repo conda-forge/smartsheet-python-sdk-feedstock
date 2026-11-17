@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "4.4.0"
+  version: "5.0.0"
 
 package:
   name: smartsheet-python-sdk
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/smartsheet-python-sdk/smartsheet_python_sdk-${{ version }}.tar.gz
-  sha256: 7ca910dd2dc23e4b1d2fbfe866e6945c261362819ce1679aa7e72cdb3ed9cead
+  sha256: d4a2d85fe976d1b066be4649f09282407be6b3ec19b9162e43981a5a7e239dbb
 
 build:
   noarch: python
